@@ -33,7 +33,7 @@ aws_service=$2
 
 #Check if required number of arguments are passed.
 
-if [ $1 -ne 2]; then
+if [ $# -ne 2]; then
     echo "Usage: $0 <region> <service name>"
     echo "Example: ./aws_resource_list.sh us-east-1 EC2"
     exit 1
@@ -41,7 +41,7 @@ fi
 
 # Check if AWS CLI is installed.
 
-If ! command -v aws &> /dev/null; then
+if ! command -v aws &> /dev/null; then
     echo "AWS CLI is not installed. Please install it and try agian."
     exit 1 
 fi
